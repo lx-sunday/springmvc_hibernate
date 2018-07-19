@@ -30,14 +30,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("/showInfo/{userId}")
-	public String showUserInfo(ModelMap modelMap, @PathVariable String userId){
-		LOGGER.info("查询用户：" + userId);
-		AcctUser userInfo = userService.load(userId);
-		modelMap.addAttribute("userInfo", userInfo);
-		return "/user/showInfo";
-	}
-	
 	@RequestMapping("/showInfos")
 	public @ResponseBody List<AcctUser> showUserInfos(){
 		LOGGER.info("查询用户全部用户");

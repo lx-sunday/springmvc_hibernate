@@ -1,9 +1,14 @@
 package org.andy.work.dao;
 
-import org.andy.work.dao.base.GenericDao;
+import java.util.List;
+
+import org.andy.support.annotation.Query;
 import org.andy.work.entity.AcctUser;
 
 
-public interface UserDao extends GenericDao<AcctUser, String> {
+public interface UserDao{
+
+	@Query("from AcctUser bean")
+	List<AcctUser> findAll();
 
 }
